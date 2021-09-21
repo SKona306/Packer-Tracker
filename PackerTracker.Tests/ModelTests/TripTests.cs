@@ -15,7 +15,14 @@ namespace PackerTracker.TestTools
       Assert.AreEqual(typeof(Trip), testTrip.GetType());
     }
 
-    
+    [TestMethod]
+    public void TripConstructor_ReturnsCorrectTripName_String()
+    {
+      string name = "bicycle";
+      Trip testTrip = new Trip(name);
+      string result = testTrip.TripName;
+      Assert.AreEqual(name, result);
+    }
     
   }
 }
