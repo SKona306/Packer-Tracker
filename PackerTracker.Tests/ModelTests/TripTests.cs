@@ -3,10 +3,10 @@ using PackerTracker.Models;
 using System.Collections.Generic;
 using System;
 
-namespace PackerTracker.TestTools
+namespace PackerTracker.Tests
 {
   [TestClass]
-  public class PackerTrackerTests 
+  public class TripTests
   {
     [TestMethod]
     public void TripConstructor_CreatesInstanceOfTrip_Trip()
