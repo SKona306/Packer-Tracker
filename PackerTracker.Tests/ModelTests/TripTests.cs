@@ -20,7 +20,7 @@ namespace PackerTracker.Tests
     {
       string name = "bicycle";
       Trip testTrip = new Trip(name);
-      string result = testTrip.TripName;
+      string result = testTrip.Name;
       Assert.AreEqual(name, result);
     }
     
