@@ -13,7 +13,7 @@ namespace PackerTracker.Tests
     {
       Item.ClearAll();
     }
-    
+
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfItem_Item()
     {
@@ -46,6 +46,18 @@ namespace PackerTracker.Tests
     {
       //Arrange
       List<Item> newList = new List<Item> {};
+      //Act
+      List<Item> result = Item.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
+    
+    [TestMethod]
+    public void GetAllMethod_ReturnItems_ItemList()
+    {
+      //Arrange
+      Item newItem1 = new Item("heh", "things to do");
+      List<Item> newList = new List<Item> {newItem1};
       //Act
       List<Item> result = Item.GetAll();
       //Assert
