@@ -6,8 +6,14 @@ using System;
 namespace PackerTracker.Tests
 {
   [TestClass]
-  public class ItemsTests 
+  public class ItemsTests : IDisposable
   {
+
+    public void Dispose()
+    {
+      Item.ClearAll();
+    }
+    
     [TestMethod]
     public void ItemConstructor_CreatesInstanceOfItem_Item()
     {
@@ -25,7 +31,7 @@ namespace PackerTracker.Tests
       Assert.AreEqual(name, result);
     }
 
-     [TestMethod]
+    [TestMethod]
     public void ItemConstructor_CreatesObjectWithDescription_String()
     {
       string name = "bicycle trip";
@@ -33,6 +39,17 @@ namespace PackerTracker.Tests
       Item newItem = new Item(name, tripDescription);
       string result = newItem.Description;
       Assert.AreEqual(tripDescription, result);
+    }
+
+    [TestMethod]
+    public void GetAllMethod_ShowsEmptyList_ItemList()
+    {
+      //Arrange
+      List<Item> newList = new List<Item> {};
+      //Act
+      List<Item> result = Item.GetAll();
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
