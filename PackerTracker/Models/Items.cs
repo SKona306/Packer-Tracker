@@ -24,5 +24,10 @@ namespace PackerTracker.Models
     {
       ItemList.Clear();
     }
+
+    public static List<Item> GetList()
+    {
+      return ItemList;
+    } 
   }
 }
