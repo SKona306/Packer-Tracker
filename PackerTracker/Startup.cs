@@ -23,7 +23,7 @@ namespace PackerTracker
       services.AddMvc();
     }
 
-   public void Configure(IApplicationBuilder app)
+    public void Configure(IApplicationBuilder app)
     {
       app.UseDeveloperExceptionPage();
       app.UseRouting();
