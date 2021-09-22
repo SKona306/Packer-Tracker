@@ -14,5 +14,15 @@ namespace PackerTracker.Models
       Description = description;
       ItemList.Add(this);
     }
+
+    public static List<Item> GetAll()
+    {
+      return ItemList;
+    }
+
+    public static void ClearAll()
+    {
+      ItemList.Clear();
+    }
   }
 }
