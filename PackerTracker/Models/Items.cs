@@ -6,7 +6,12 @@ namespace PackerTracker.Models
   {
     public string Name { get; set; }
     public string Description { get; set; }
-    public static List<Item> ItemList = new List<Item> {};
+    public static List<Item> ItemList = new List<Item>  {};
+
+    public List<Item> GetList
+    {
+      get { return ItemList; }
+    } 
 
     public Item(string name, string description)
     {
@@ -24,10 +29,6 @@ namespace PackerTracker.Models
     {
       ItemList.Clear();
     }
-
-    public static List<Item> GetList()
-    {
-      return ItemList;
-    } 
+    
   }
 }
