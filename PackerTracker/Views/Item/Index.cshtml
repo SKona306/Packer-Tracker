@@ -1,0 +1,22 @@
+@using PackerTracker.Models;
+
+<h1>Packer Tracker</h1>
+@if(Model.Count == 0)
+{
+  <p>There are no items in the list.</p>
+}
+
+<h4>Your items:</h4>
+<ul>
+  @foreach(Item item in Model)
+  {
+    <li>@item.Name</li>
+  }
+</ul>
+
+<a href="/items/new">Add a new item.</a>
+<a href="/trips">Back to your trips</a>
+
+<form action="/items/delete" method="post">
+  <button type="submit" name="button">Clear All Items</button>
+</form>
