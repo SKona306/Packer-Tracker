@@ -26,5 +26,10 @@ namespace PackerTracker.Models
     {
       _instances.Clear();
     }
+
+    public static Trip Find(int searchId)
+    {
+      return _instances[searchId - 1];
+    }
   }
 }
