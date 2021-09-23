@@ -6,8 +6,14 @@ using System;
 namespace PackerTracker.Tests
 {
   [TestClass]
-  public class TripTests
+  public class TripTests : IDisposable
   {
+    
+    public void Dispose()
+    {
+      Trip.ClearAll();
+    }
+
     [TestMethod]
     public void TripConstructor_CreatesInstanceOfTrip_Trip()
     {
@@ -23,7 +29,15 @@ namespace PackerTracker.Tests
       string result = testTrip.Name;
       Assert.AreEqual(name, result);
     }
-    
+
+    [TestMethod]
+    public void GetId_TripId_Int()
+    {
+      string name = "name";
+      Trip newTrip = new Trip(name);
+      int result = newTrip.Id;
+      Assert.AreEqual(1, result);
+    }
   }
 }
 
